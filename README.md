@@ -70,20 +70,20 @@ now = datetime.now()
 c.send(now.strftime("%d/%m/%Y %H:%M:%S").encode())
 ack=c.recv(1024).decode()
 if ack:
- print(ack)
+    print(ack)
 c.close()
 ```
 ## Server:
 ```
 import socket
 s=socket.socket()
-s.connect(('localhost',8000))
+s.connect(('localhost',3000))
 print(s.getsockname())
 print(s.recv(1024).decode())
 s.send("acknowledgement recived from the server".encode())
 ```
  ## Output:
-![CN ex1 Output](https://github.com/user-attachments/assets/f4ced881-10e0-4d74-9c3a-d338f024edf5)
+![CN output 1](https://github.com/user-attachments/assets/68c93f03-a816-407e-a1fb-8487eb6e0000)
 
 
 ## Result:
